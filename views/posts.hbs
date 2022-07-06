@@ -1,0 +1,42 @@
+<div class="container" style="padding-top:60px">
+    <div class="row container-lg">
+        <div class="col-md-12 mx-auto">
+            <h2 class="mt-xl-5 text-warning">Posts</h2>
+            <hr />
+
+
+            {{#if message }}
+                <div class="col-md-12 text-center">
+                    <strong>{{message}}</strong>
+                </div>
+            {{else }}
+                <div class="container table-responsive py-5">
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Post ID</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Post Date</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Published</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each posts}}
+                            <tr>
+                                <th scope="row">{{id}}</th>
+                                <td>{{title}}</td>
+                                <td>{{postDate}}</td>
+                                <td>{{category}}</td>
+                                <td>{{published}}</td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+            {{/if}}
+
+        </div>
+    </div>
+</div>

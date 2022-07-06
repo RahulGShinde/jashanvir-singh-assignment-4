@@ -1,0 +1,39 @@
+<div class="container" style="padding-top:60px">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-warning">Categories</h2>
+            <hr />
+
+            {{#if message }}
+                <div class="col-md-12 text-center">
+                    <strong>{{message}}</strong>
+                </div>
+            {{else }}
+                <div class="container table-responsive py-5">
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Category ID</th>
+                                <th scope="col">Category Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each categories}}
+                            <tr>
+                                <th scope="row">
+                                    {{id}}
+                                </th>
+                                <td>
+                                    <a href="posts?category={{id}}">{{category}}</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+            {{/if}}
+
+        </div>
+    </div>
+</div>

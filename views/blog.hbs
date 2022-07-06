@@ -1,0 +1,50 @@
+<div class="container" style="padding-top:60px">
+    <div class="row">
+        <section class="main col-md-9">
+            {{!-- {{#if data.post}} --}}
+            <article>
+                <h2 class="text-warning">{{data.post.title}}</h2>
+                <img src="https://dummyimage.com/847x320/d9d9d9/545454.jpg" alt="feature Image" style="width:100%" />
+                <br /><br />
+                {{data.post.body}}
+                <br /><br />
+                <strong>Category:</strong> {{data.post.category}}<br />
+                <strong>Last Updated:</strong> {{data.post.postDate}}
+
+            </article>
+            {{!-- {{/if}} --}}
+        </section>
+        <aside class="col-md-3">
+            <br /><br />
+            <h3>Posts</h3>
+
+            {{#if data.posts}}
+            <ul class="list-group">
+                {{!-- <a href="#" class="list-group-item">Post 1</a>
+                <a href="#" class="list-group-item">Post 2</a>
+                <a href="#" class="list-group-item">etc...</a> --}}
+                {{#each data.posts}}
+                <a href="/blog/{{id}}?category={{category}}" class="list-group-item">{{title}}</a>
+                <br>
+                {{/each}}
+            </ul>
+            {{/if}}
+
+
+            <h3>Categories</h3>
+
+            {{#if data.categories}}
+            <ul class="list-group">
+                {{!-- <a href="#" class="list-group-item">Category 1</a>
+                <a href="#" class="list-group-item">Category 2</a>
+                <a href="#" class="list-group-item">etc...</a> --}}
+                {{#each data.categories}}
+                <a href="/blog?category={{id}}" class="list-group-item">{{category}}</a>
+                <br>
+                {{/each}}
+            </ul>
+            {{/if}}
+
+        </aside>
+    </div>
+</div>
